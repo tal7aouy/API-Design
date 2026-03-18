@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/middleware.php';
 
 use Projects\EcommerceApi\Php\Http\Controllers\OrderController;
 use Projects\EcommerceApi\Php\Http\Controllers\ProductController;
@@ -10,6 +11,10 @@ use Projects\EcommerceApi\Php\Domain\Services\OrderService;
 use Projects\EcommerceApi\Php\Domain\Services\ProductService;
 use Projects\EcommerceApi\Php\Domain\Repositories\OrderRepository;
 use Projects\EcommerceApi\Php\Domain\Repositories\ProductRepository;
+
+$requestId = getRequestId();
+header('X-Request-Id: ' . $requestId);
+logRequest($requestId);
 
 $pdo = new PDO('sqlite::memory:');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

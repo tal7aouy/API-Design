@@ -5,11 +5,13 @@ import { createOrdersRouter } from './routes/orders';
 import { ProductService } from './services/ProductService';
 import { OrderService } from './services/OrderService';
 import { errorHandler } from './middleware/errorHandler';
+import { requestLogger } from './middleware/requestLogger';
 
 const app = express();
 const port = process.env.PORT ? Number(process.env.PORT) : 3002;
 
 app.use(bodyParser.json());
+app.use(requestLogger);
 
 const productService = new ProductService();
 const orderService = new OrderService(productService);

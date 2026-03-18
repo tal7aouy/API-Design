@@ -80,6 +80,11 @@ We also call out common security issues in `examples/bad/*`.
 
 ## 5. Logging & Monitoring
 
+We use **request correlation IDs** to tie logs together across services and clients:
+
+- Each request may supply `X-Request-Id`, otherwise one is generated.
+- Responses include `X-Request-Id` so clients can correlate failures.
+
 In the mini projects we:
 
 - Log incoming requests with correlation IDs.

@@ -3,10 +3,15 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/middleware.php';
 
 use Projects\BlogApi\Php\Http\Controllers\PostController;
 use Projects\BlogApi\Php\Domain\Services\PostService;
 use Projects\BlogApi\Php\Domain\Repositories\PostRepository;
+
+$requestId = getRequestId();
+header('X-Request-Id: ' . $requestId);
+logRequest($requestId);
 
 $pdo = new PDO('sqlite::memory:');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
