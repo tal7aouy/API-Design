@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+.env
+
+# PHP
+/vendor/
+composer.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite
+
+# IDEs
+.vscode/
+.idea/
