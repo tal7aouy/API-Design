@@ -96,4 +96,3 @@ In real systems you’d integrate with:
 - Metrics systems (Prometheus, CloudWatch).
 
 The patterns shown here map directly to those tools.
-
