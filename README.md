@@ -1,4 +1,4 @@
-## Production-Ready API Design
+## API Design guide
 
 This repository is a **hands-on, opinionated curriculum** for learning API design from **beginner to advanced**, using **real, production-style code** in:
 
